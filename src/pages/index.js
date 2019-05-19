@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
+import Time from "../components/time"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
@@ -29,7 +30,11 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
+              <small>{node.frontmatter.date}</small>,{" "}
+              <Time
+                minutes={node.fields.readingTime.minutes}
+                text={node.fields.readingTime.text}
+              />
               <p
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
@@ -58,6 +63,10 @@ export const pageQuery = graphql`
           excerpt
           fields {
             slug
+            readingTime {
+              text
+              minutes
+            }
           }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")

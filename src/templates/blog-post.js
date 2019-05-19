@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
+import Time from "../components/time"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
@@ -27,7 +28,11 @@ class BlogPostTemplate extends React.Component {
             marginTop: rhythm(-1),
           }}
         >
-          {post.frontmatter.date}
+          {post.frontmatter.date},{" "}
+          <Time
+            minutes={post.fields.readingTime.minutes}
+            text={post.fields.readingTime.text}
+          />
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
@@ -84,6 +89,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+      }
+      fields {
+        slug
+        readingTime {
+          text
+          minutes
+        }
       }
     }
   }

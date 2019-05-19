@@ -8,6 +8,7 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
+import { TextLink } from "./styles"
 
 import { rhythm } from "../utils/typography"
 
@@ -38,12 +39,12 @@ function Bio() {
               }}
             />
             <p>
-              Written by <strong>{author}</strong> who lives and works in San
-              Francisco building useful things.
-              {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
-              </a>
+              Personal blog by{" "}
+              <TextLink href={`https://twitter.com/${social.twitter}`}>
+                {author}
+              </TextLink>
+              .<br />
+              Loves Dogs, Football, Javascript, Clojure and everthing tech.
             </p>
           </div>
         )
