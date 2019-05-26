@@ -10,7 +10,8 @@
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
     "clippyjs": "^0.0.3",
-    "gatsby": "^2.5.5",
+    "gatsby": "^2.7.1",
+    "gatsby-cli": "^2.6.2",
     "gatsby-image": "^2.1.0",
     "gatsby-plugin-feed": "^2.2.0",
     "gatsby-plugin-google-analytics": "^2.0.20",
@@ -29,6 +30,7 @@
     "gatsby-source-filesystem": "^2.0.36",
     "gatsby-transformer-remark": "^2.3.12",
     "gatsby-transformer-sharp": "^2.1.19",
+    "global": "^4.3.2",
     "prismjs": "^1.16.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

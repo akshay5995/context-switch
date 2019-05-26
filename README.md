@@ -1,3 +1,5 @@
 # Context Switch
 
-It's my personal blog bootstrapped using Gatsby JS
+Personal blog bootstrapped using Gatsby JS
+
+Hosted at: https://akshayramvignesh.dev/

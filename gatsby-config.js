@@ -3,7 +3,7 @@ module.exports = {
     title: `Context Switch`,
     author: `Akshay Ram Vignesh`,
     description: `Personal Blog by Akshay Ram Vignesh`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://akshayramvignesh.dev`,
     social: {
       twitter: `akshay5995`,
       medium: `akshay5995`,
@@ -12,6 +12,7 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -50,12 +51,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        displayName: false,
-      },
-    },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -67,13 +62,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Context Switch`,
+        short_name: `Context Switch`,
         start_url: `/`,
-        background_color: `#888b8d`,
-        theme_color: `#663399`,
+        background_color: `#fff`,
+        theme_color: `#888b8d`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        orientation: `landscape`,
+        icon: `content/assets/profile-pic.jpg`,
       },
     },
     `gatsby-plugin-offline`,
