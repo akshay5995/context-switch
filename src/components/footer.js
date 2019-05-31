@@ -7,7 +7,6 @@
 
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import { Footer as StyledFooter } from "./styles"
 import { SocialIcon } from "react-social-icons"
 
 function Footer() {
@@ -18,7 +17,7 @@ function Footer() {
       render={data => {
         const { social } = data.site.siteMetadata
         return (
-          <StyledFooter>
+          <footer class="footer">
             <div>
               <SocialIcon
                 url={`https://www.linkedin.com/in/${social.linkedin}`}
@@ -33,7 +32,7 @@ function Footer() {
                 style={style}
               />
             </div>
-          </StyledFooter>
+          </footer>
         )
       }}
     />

@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Title, SecondaryTitle } from "./styles"
 import { rhythm } from "../utils/typography"
 import Footer from "./footer"
+import "../css/global.css"
 
 class Layout extends React.Component {
   render() {
@@ -12,15 +12,15 @@ class Layout extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <Title>
+        <h1 class="title">
           <Link to={`/`}>{title}</Link>
-        </Title>
+        </h1>
       )
     } else {
       header = (
-        <SecondaryTitle>
+        <h2 classs="secondary-title">
           <Link to={`/`}>{title}</Link>
-        </SecondaryTitle>
+        </h2>
       )
     }
     return (

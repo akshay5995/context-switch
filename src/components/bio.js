@@ -8,7 +8,6 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-import { TextLink } from "./styles"
 
 import { rhythm } from "../utils/typography"
 
@@ -40,9 +39,12 @@ function Bio() {
             />
             <p>
               Personal blog by{" "}
-              <TextLink href={`https://twitter.com/${social.twitter}`}>
+              <a
+                class="text-link"
+                href={`https://twitter.com/${social.twitter}`}
+              >
                 {author}
-              </TextLink>
+              </a>
               .<br />
               Loves Dogs, Football, Javascript, Clojure and everthing tech.
             </p>

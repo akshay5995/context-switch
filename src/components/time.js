@@ -1,5 +1,4 @@
 import React, { Fragment } from "react"
-import { Time as StyledTime } from "./styles"
 
 const generateCups = number => {
   const cup = `☕ `
@@ -13,10 +12,10 @@ const generateCups = number => {
 
 function Time({ minutes, text }) {
   return (
-    <StyledTime>
+    <span class="time">
       <span> {text} </span>
       {generateCups(minutes)}
-    </StyledTime>
+    </span>
   )
 }
 

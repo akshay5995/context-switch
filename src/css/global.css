@@ -1,0 +1,80 @@
+@tailwind preflight;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.title > a {
+  color: #888b8d;
+  display: table;
+  white-space: nowrap;
+  box-shadow: none;
+}
+
+.title > a:before,
+.title > a:after {
+  border-top: 1px solid #888b8d;
+  content: "";
+  display: table-cell;
+  position: relative;
+  top: 0.5em;
+  width: 45%;
+}
+
+.title > a:before {
+  right: 1.5%;
+}
+
+.title > a:after {
+  left: 1.5%;
+}
+
+.secondary-title > a {
+  color: #888b8d;
+  box-shadow: none;
+}
+
+.footer {
+  bottom: 0;
+  display: table;
+  white-space: nowrap;
+}
+
+.footer > div {
+  display: flex;
+  justify-content: space-evenly;
+  width: 15em;
+}
+
+.footer > a {
+  box-shadow: none;
+}
+
+footer:before,
+footer:after {
+  border-top: 1px solid #888b8d;
+  content: "";
+  display: table-cell;
+  position: relative;
+  top: 0.5em;
+  width: 45%;
+}
+footer:before {
+  right: 1.5%;
+}
+footer:after {
+  left: 1.5%;
+}
+
+.text-link {
+  color: #888b8d;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.time > span {
+  font-size: 0.83255rem;
+  line-height: 1.75rem;
+}
