@@ -10,7 +10,7 @@ Note: _This article assumes you have a fairly decent idea about Microsoft Power 
 
 ## TL;DR
 
-Intall `powerbi-report-component` using your favourite package manager.
+Install `powerbi-report-component` using your favourite package manager.
 
 ```
 npm i powerbi-report-component --save-dev
@@ -28,9 +28,9 @@ yarn add powerbi-report-component --dev
 Basic usage,
 
 ```javascript
-import Report from "powerbi-report-component";
+import Report from "powerbi-report-component"
 
-<Report
+;<Report
   embedType="report"
   tokenType="Embed"
   accessToken=""
@@ -98,15 +98,13 @@ Using an iframe is pretty straightforward but, this doesn't provide the flexibil
 You can use the generated URL to embed using iframe like this,
 
 ```html
-
 <iframe
   width="800"
   height="600"
   src="http://myserver/reports/powerbi/Sales?rs:embed=true"
-  allowFullScreen="true">
+  allowfullscreen="true"
+>
 </iframe>
-
-
 ```
 
 But, naturally as JS developers we tend to go with the more flexible JS API.
@@ -119,15 +117,14 @@ You might be wondering, the demo is in Vanilla JS so if I have to make it a Reac
 
 **_powerbi-report-component to the rescue! ✨_**
 
-
 Check out the [package](https://www.npmjs.com/package/powerbi-report-component).
 
 Usage,
 
 ```javascript
-import Report from "powerbi-report-component";
+import Report from "powerbi-report-component"
 
-<Report
+;<Report
   embedType="report" // or "dashboard"
   tokenType="Embed" // or "Aad"
   accessToken="" // accessToken goes here

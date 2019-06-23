@@ -21,17 +21,16 @@ function Bio() {
           <div
             style={{
               display: `flex`,
-              marginBottom: rhythm(2.5),
+              margin: "0.5em 1em",
             }}
           >
             <Image
               fixed={data.avatar.childImageSharp.fixed}
               alt={author}
               style={{
-                marginRight: rhythm(1 / 2),
-                marginBottom: 0,
                 minWidth: 50,
                 borderRadius: `100%`,
+                margin: "auto 0.875rem",
               }}
               imgStyle={{
                 borderRadius: `50%`,
@@ -46,7 +45,8 @@ function Bio() {
                 {author}
               </a>
               .<br />
-              Loves Dogs, Football, Javascript, Clojure and everthing tech.
+              Loves Entrepreneurship, Software Development, Blogging, Football
+              and Dogs.
             </p>
           </div>
         )

@@ -35,6 +35,7 @@ JavaScript is a multi-paradigm, dynamic language with types and operators, stand
 ---
 
 ## What’s with the name ?
+
 _or, What's ECMAScript ?_
 
 JavaScript was created in 1995 by Brendan Eich (Netscape Engineer). It was originally named Mocha and was changed to be called LiveScript, but it was renamed after a marketing decision that attempted to capitalise on the popularity of Java language at that point in time.
@@ -46,20 +47,19 @@ The standard received a significant update as ECMAScript edition 3 in 1999, and 
 The fourth edition was abandoned, due to political differences concerning language complexity.
 Many parts of the fourth edition formed the basis for ECMAScript edition 5, published in December of 2009, and for the 6th major edition of the standard, published in June of 2015.
 
-
 So in conclusion, I believe JavaScript is considered the Language which implements a standard called ECMAScript.
-
 
 > JavaScript is the implementation of the standard that is, ECMAScript.
 
 ---
 
 ## Prototypal Inheritance and Classes
+
 _One of the most fascinating features for me personally_
 
 _What's prototypal inheritance you ask ?_
 
-JavaScript only has one construct: *objects*. Each object has a private property which holds a link to another object called its *prototype*.
+JavaScript only has one construct: _objects_. Each object has a private property which holds a link to another object called its _prototype_.
 
 That prototype object has a prototype of its own, and so on until an object is reached with null as its prototype. By definition, null has no prototype, and acts as the final link in this prototype chain.
 Nearly all objects in JavaScript are instances of Object which sits on the top of a prototype chain.
@@ -71,33 +71,31 @@ The `__proto__` property exposes the internal prototype linkage.
 
 ![prototypal inheritance example](https://cdn-images-1.medium.com/max/800/0*sacpzj7gNySk-x8O.png)
 
-*prototype* vs `__proto__`
+_prototype_ vs `__proto__`
 
-The *prototype* is a property on a constructor function that sets what will become the `__proto__` property on the constructed object.
+The _prototype_ is a property on a constructor function that sets what will become the `__proto__` property on the constructed object.
 
 ```javascript
-
 var animal = {
   eats: true,
   walk() {
-    console.log("walking!!");
-  }
-};
+    console.log("walking!!")
+  },
+}
 
 var rabbit = {
   jumps: true,
-  __proto__: animal
-};
+  __proto__: animal,
+}
 var bugsBunny = {
-    likesEating: 'Cartoon Carrots',
-    isCartoon: true,
-    __proto__: rabbit
-};
-bugsBunny.walk(); // walking!!! 
+  likesEating: "Cartoon Carrots",
+  isCartoon: true,
+  __proto__: rabbit,
+}
+bugsBunny.walk() // walking!!!
 // resolved by going up the prototype chain to 'animal'
-console.log(bugsBunny.jumps); // true
+console.log(bugsBunny.jumps) // true
 // resolved by going up the prototype chain to 'rabbit'
-
 ```
 
 Now, tell me about classes ?
@@ -108,21 +106,21 @@ ES6 introduced a new set of keywords implementing classes. i.e, class, construct
 
 I'm gonna let you take it from here to find out more about classes.
 
-_Sources: [Classes](https://medium.com/r/?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FJavaScript%2FReference%2FClasses)
+\_Sources: [Classes](https://medium.com/r/?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FJavaScript%2FReference%2FClasses)
 
 ---
 
 ## What is "this " ?
+
 _Spoiler: it's just spell binding_
 
 `this` behaves a little differently in JavaScript compared to other languages. It also has some differences between strict and non-strict mode in Javascript.
 
 The value of `this` is determined by how a function is called.It can't be set by assignment during execution, and it may be different each time the function is called.
 
-
 ### Global Context
 
-In non-strict mode by default this points to the global window object in browser, and in strict mode by default *this* is *undefined*.
+In non-strict mode by default this points to the global window object in browser, and in strict mode by default _this_ is _undefined_.
 
 ```javascript
 
@@ -140,24 +138,21 @@ console.log(this); //undefined
 
 ### Function Context
 
-
 The value of `this` remains at whatever it was set to when entering the execution context.
 
 To pass the value of `this` from one context to another, use call, or apply:
 
 ```javascript
+var obj1 = { a: "Custom" }
 
-var obj1 = { a: 'Custom' };
-
-var a = 'Global';
+var a = "Global"
 
 function whatIsA() {
-   return this.a;
+  return this.a
 }
 
-console.log(whatIsA()); //Global
-console.log(whatIsA().call(obj1)); //Custom
-
+console.log(whatIsA()) //Global
+console.log(whatIsA().call(obj1)) //Custom
 ```
 
 ### Bind()
@@ -165,7 +160,6 @@ console.log(whatIsA().call(obj1)); //Custom
 ES5 introduced a new function for Function.prototype called the bind().
 
 Calling func.bind(someObject)creates a new function with the same body and scope as func, but where this occurs in the original function, in the new function it is permanently bound to the first argument of bind
-
 
 ```javascript
 
@@ -184,28 +178,26 @@ console.log(whatIsAInObj2()); // I'm Object 2's a!
 With the introduction of arrow functions `this` retains the value of the enclosing lexical context's `this`.
 
 ```javascript
-
 var obj = {
-             bar: function() {
-                   var x = () => this;
-                   return x;
-               }
-         };
+  bar: function() {
+    var x = () => this
+    return x
+  },
+}
 
-var fn = obj.bar();
+var fn = obj.bar()
 
-console.log(fn() === obj); // true
-
+console.log(fn() === obj) // true
 ```
 
 I can keep going.But, for more on this take a look at the [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this). 😉
-
 
 _Note: Read about how this binding is only affected by the most immediate member reference._
 
 ---
 
 ## Hoisting ⬆️
+
 _Up and up and up ? ( Coldplay fans will get it 🎶)_
 
 Hoisting came in to picture or specification only with ES6.
@@ -217,98 +209,90 @@ A definition of hoisting might suggest that variable and function declarations a
 It's not true , the variable and function declarations are put into memory during the compile phase, but stay exactly where you typed them in your code.
 
 ```javascript
+console.log(sayHello("world!")) // Hello world!
+console.log(a)
 
-console.log(sayHello('world!')); // Hello world!
-console.log(a); 
-
-// undefined and not 'ReferenceError' due to hoisting 
-console.log(sayOla('world!')); 
+// undefined and not 'ReferenceError' due to hoisting
+console.log(sayOla("world!"))
 
 // TypeError: sayOla is not a function
 function sayHello(param) {
-   return 'Hello ' + param;
+  return "Hello " + param
 }
 
-var a = 1;
-var sayOla = function (param) {
-   return 'Hello ' + param;
-};
-
+var a = 1
+var sayOla = function(param) {
+  return "Hello " + param
+}
 ```
 
 Above example shows hoisting in action.
 Conceptually, how your run time sees it is.
 
 ```javascript
-
 function sayHello(param) {
-   return 'Hello ' + param;
+  return "Hello " + param
 }
 
-var a;
-var sayOla;
+var a
+var sayOla
 
-console.log(sayHello('world!')); // Hello world!
-console.log(a); 
+console.log(sayHello("world!")) // Hello world!
+console.log(a)
 // undefined and not 'ReferenceError' due to hoisting
-console.log(sayOla('world!')); 
+console.log(sayOla("world!"))
 // TypeError: sayOla is not a function
-a = 1;
-sayOla = function (param) {
-   return 'Hello ' + param;
-};
-
+a = 1
+sayOla = function(param) {
+  return "Hello " + param
+}
 ```
+
 _Note: only declarations are hoisted but not assignments. also, class declarations are not hoisted._
 
 ---
 
-
 ## Now, Let's bring it to a "Closure" 🔚
+
 _Another JS pun (sorry!)_
 
-
-A *closure* is the function bundled together (enclosed) with references to its surrounding state (the *lexical environment*).
+A _closure_ is the function bundled together (enclosed) with references to its surrounding state (the _lexical environment_).
 
 Closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
 
 ```javascript
-
 function outerFunction() {
-    var x = 'Hello ';
-    return function (param) {
-       return x + param;
-    }
+  var x = "Hello "
+  return function(param) {
+    return x + param
+  }
 }
 
-var newFunc = outerFunction();
+var newFunc = outerFunction()
 
-console.log(newFunc('World!')); // Hello World!
+console.log(newFunc("World!")) // Hello World!
 // Even after returning the function has access to variable x
-
 ```
 
 Closures are usually used to give objects data privacy and to fix order of partial application of functions.
 
 ```javascript
-
 // partial application
 
 function makeAdder(x) {
   return function(y) {
-    return x + y;
-  };
+    return x + y
+  }
 }
 
-var add5 = makeAdder(5);
+var add5 = makeAdder(5)
 
-console.log(add5(10)); // 15
-
+console.log(add5(10)) // 15
 ```
 
 ---
-I hope this article got you inspired or curious to learn more about JavaScript.
 
+I hope this article got you inspired or curious to learn more about JavaScript.
 
 PS: I'll just leave you with my personal favourite JS articles/ docs 💌
 
@@ -320,5 +304,3 @@ PS: I'll just leave you with my personal favourite JS articles/ docs 💌
 6. [Class and Prototypal Inheritance](https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9)
 
 You can also follow this really interesting [YouTube channel](https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q) for cool JS related stuff and more .
-
-I’ll keep adding to this list more as I go through this incredible adventure of trying to understand this powerful yet, mysterious landscape of JavaScript.

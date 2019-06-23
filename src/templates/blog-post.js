@@ -19,7 +19,7 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <h1>{post.frontmatter.title}</h1>
+        <h1 class="blog-title">{post.frontmatter.title}</h1>
         <p
           style={{
             ...scale(-1 / 5),
@@ -28,7 +28,7 @@ class BlogPostTemplate extends React.Component {
             marginTop: rhythm(-1),
           }}
         >
-          {post.frontmatter.date},{" "}
+          {post.frontmatter.date},{"  "}
           <Time
             minutes={post.fields.readingTime.minutes}
             text={post.fields.readingTime.text}

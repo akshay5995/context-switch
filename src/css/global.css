@@ -1,14 +1,21 @@
-@tailwind preflight;
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,800");
 
-@tailwind components;
+html {
+  font-family: "Lato", Georgia !important;
+}
 
-@tailwind utilities;
+html > a {
+  color: #007acc !important;
+}
 
 .title > a {
   color: #888b8d;
   display: table;
   white-space: nowrap;
+  font-weight: 700;
+  font-style: oblique !important;
   box-shadow: none;
+  text-decoration: none;
 }
 
 .title > a:before,
@@ -30,8 +37,11 @@
 }
 
 .secondary-title > a {
-  color: #888b8d;
   box-shadow: none;
+  box-shadow: 0 1px 0 0 currentColor;
+  color: #007acc;
+  font-weight: 400;
+  text-decoration: none;
 }
 
 .footer {
@@ -70,11 +80,31 @@ footer:after {
   color: #888b8d;
   text-decoration: none;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: capitalize;
 }
 
 .time > span {
   font-size: 0.83255rem;
   line-height: 1.75rem;
+}
+
+.blog-title {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: 1.75rem;
+  color: inherit;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+  font-size: 2.5rem;
+  line-height: 1.1;
+}
+
+.blog-title:hover {
+  text-decoration: none;
 }

@@ -26,11 +26,20 @@ class BlogIndex extends React.Component {
                   marginBottom: rhythm(1 / 4),
                 }}
               >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                <Link
+                  style={{
+                    boxShadow: `none`,
+                    fontSize: "20px",
+                    fontWight: "800",
+                    color: "#007acc",
+                    textDecoration: "none",
+                  }}
+                  to={node.fields.slug}
+                >
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>,{" "}
+              <small>{node.frontmatter.date}</small>,{"  "}
               <Time
                 minutes={node.fields.readingTime.minutes}
                 text={node.fields.readingTime.text}
