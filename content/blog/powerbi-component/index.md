@@ -12,24 +12,16 @@ Note: _This article assumes you have a fairly decent idea about Microsoft Power 
 
 Install `powerbi-report-component` using your favourite package manager.
 
-```
-npm i powerbi-report-component --save-dev
-
-```
+`npm i powerbi-report-component --save-dev`
 
 or,
 
-```
-
-yarn add powerbi-report-component --dev
-
-```
+`yarn add powerbi-report-component --dev`
 
 Basic usage,
 
 ```javascript
 import Report from "powerbi-report-component"
-
 ;<Report
   embedType="report"
   tokenType="Embed"
@@ -123,7 +115,6 @@ Usage,
 
 ```javascript
 import Report from "powerbi-report-component"
-
 ;<Report
   embedType="report" // or "dashboard"
   tokenType="Embed" // or "Aad"

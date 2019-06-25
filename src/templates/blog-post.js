@@ -34,7 +34,10 @@ class BlogPostTemplate extends React.Component {
             text={post.fields.readingTime.text}
           />
         </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div
+          style={{ lineHeight: "1.7" }}
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
         <hr
           style={{
             marginBottom: rhythm(1),

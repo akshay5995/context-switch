@@ -1,7 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:400,700,800");
-
 html {
-  font-family: "Lato", Georgia !important;
+  font-family: Montserrat, sans-serif !important;
 }
 
 html > a {
@@ -39,7 +37,7 @@ html > a {
 .secondary-title > a {
   box-shadow: none;
   box-shadow: 0 1px 0 0 currentColor;
-  color: #007acc;
+  color: #007acc !important;
   font-weight: 400;
   text-decoration: none;
 }

@@ -5,7 +5,17 @@ import Bio from "../components/bio"
 import Time from "../components/time"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import posed from "react-pose"
+
+const List = posed.ul({
+  enter: { staggerChildren: 50 },
+  exit: { staggerChildren: 20, staggerDirection: -1 },
+})
+
+const Item = posed.li({
+  enter: { x: 0, opacity: 1 },
+  exit: { x: 100, opacity: 0 },
+})
 
 class BlogIndex extends React.Component {
   render() {
@@ -15,43 +25,46 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" />
+        <SEO title="Posts" />
         <Bio />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link
+        <List style={{ listStyle: "none" }}>
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug
+            return (
+              <Item key={node.fields.slug}>
+                <h3
                   style={{
-                    boxShadow: `none`,
-                    fontSize: "20px",
-                    fontWight: "800",
-                    color: "#007acc",
-                    textDecoration: "none",
+                    marginBottom: "0.4375rem",
                   }}
-                  to={node.fields.slug}
                 >
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>,{"  "}
-              <Time
-                minutes={node.fields.readingTime.minutes}
-                text={node.fields.readingTime.text}
-              />
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </div>
-          )
-        })}
+                  <Link
+                    style={{
+                      boxShadow: `none`,
+                      fontSize: "20px",
+                      fontWight: "800",
+                      color: "#007acc",
+                      textDecoration: "none",
+                    }}
+                    to={node.fields.slug}
+                  >
+                    {title}
+                  </Link>
+                </h3>
+                <small>{node.frontmatter.date}</small>,{"  "}
+                <Time
+                  minutes={node.fields.readingTime.minutes}
+                  text={node.fields.readingTime.text}
+                />
+                <p
+                  style={{ margin: "0 0 1.75rem 0" }}
+                  dangerouslySetInnerHTML={{
+                    __html: node.frontmatter.description || node.excerpt,
+                  }}
+                />
+              </Item>
+            )
+          })}
+        </List>
       </Layout>
     )
   }

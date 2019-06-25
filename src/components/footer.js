@@ -31,6 +31,7 @@ function Footer() {
                 url={`https://www.github.com/${social.github}`}
                 style={style}
               />
+              <SocialIcon url={`/rss.xml`} network="rss" style={style} />
             </div>
           </footer>
         )
