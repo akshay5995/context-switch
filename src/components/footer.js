@@ -17,7 +17,7 @@ function Footer() {
       render={data => {
         const { social } = data.site.siteMetadata
         return (
-          <footer class="footer">
+          <footer className="footer">
             <div>
               <SocialIcon
                 url={`https://www.linkedin.com/in/${social.linkedin}`}

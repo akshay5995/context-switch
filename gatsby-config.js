@@ -14,6 +14,13 @@ module.exports = {
   plugins: [
     `gatsby-plugin-postcss`,
     {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint:
+          "https://gmail.us3.list-manage.com/subscribe/post?u=cbe70539edc727339a4318cd8&amp;id=1ae9e74486",
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,

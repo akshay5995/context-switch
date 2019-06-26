@@ -12,13 +12,13 @@ class Layout extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <h1 class="title">
+        <h1 className="title">
           <Link to={`/`}>{title}</Link>
         </h1>
       )
     } else {
       header = (
-        <h2 classs="secondary-title">
+        <h2 className="secondary-title">
           <Link to={`/`}>{title}</Link>
         </h2>
       )

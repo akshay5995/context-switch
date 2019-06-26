@@ -6,6 +6,11 @@ html > a {
   color: #007acc !important;
 }
 
+main > img {
+  width: 100%;
+  height: auto;
+}
+
 .title > a {
   color: #888b8d;
   display: table;
@@ -105,4 +110,76 @@ footer:after {
 
 .blog-title:hover {
   text-decoration: none;
+}
+
+#mc_embed_signup {
+  background: #fff;
+  clear: left;
+  font: 14px Helvetica, Arial, sans-serif;
+  width: 100%;
+}
+
+#mc_embed_signup > form > div {
+  display: flex;
+  flex-flow: column;
+  max-width: 30rem;
+  margin: 35px auto;
+  padding: 1.5rem 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+#mc_embed_signup_scroll > h1 {
+  font-weight: 300;
+  font-size: 25px;
+  margin-top: 1.5rem;
+}
+
+#mc_embed_signup_scroll > input[type="email"] {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid;
+  padding: 1em 0 0.8em;
+  text-align: center;
+  font-size: 18px;
+  font-family: inherit;
+  font-weight: 300;
+  line-height: 1.5;
+  color: inherit;
+  outline: none;
+}
+
+#mc_embed_signup_scroll > input[type="email"]:placeholder {
+  color: hsla(0, 0%, 100%, 0.5);
+}
+
+#mc_embed_signup_scroll > div {
+  width: 100%;
+  text-align: center;
+}
+
+#mc_embed_signup_scroll > div > input[type="submit"] {
+  all: unset;
+  margin: 2.4em;
+  background: transparent;
+  border: 2px solid;
+  padding: 1em 4em;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  position: relative;
+  transition: all 300ms ease;
+}
+
+.error-text {
+  padding: 4px 0;
+  color: red;
+}
+
+.success-text {
+  padding: 4px 0;
+  color: lightgreen;
 }

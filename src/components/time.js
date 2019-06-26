@@ -12,7 +12,7 @@ const generateCups = number => {
 
 function Time({ minutes, text }) {
   return (
-    <span class="time">
+    <span className="time">
       <span>
         {text}
         {"  "}

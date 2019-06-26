@@ -37,7 +37,7 @@ function Bio() {
             <p>
               Personal blog by{" "}
               <a
-                class="text-link"
+                className="text-link"
                 href={`https://twitter.com/${social.twitter}`}
               >
                 {author}

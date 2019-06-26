@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
+import MailChipForm from "../components/mailChimpForm"
 import Layout from "../components/layout"
 import Time from "../components/time"
 import SEO from "../components/seo"
@@ -19,7 +19,7 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <h1 class="blog-title">{post.frontmatter.title}</h1>
+        <h1 className="blog-title">{post.frontmatter.title}</h1>
         <p
           style={{
             ...scale(-1 / 5),
@@ -43,8 +43,7 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <Bio />
-
+        <MailChipForm />
         <ul
           style={{
             display: `flex`,
