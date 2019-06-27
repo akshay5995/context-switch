@@ -6,7 +6,7 @@ html > a {
   color: #007acc !important;
 }
 
-main > img {
+* > img {
   width: 100%;
   height: auto;
 }

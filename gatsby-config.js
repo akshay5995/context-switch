@@ -4,6 +4,7 @@ module.exports = {
     author: `Akshay Ram Vignesh`,
     description: `Personal Blog by Akshay Ram Vignesh`,
     siteUrl: `https://akshayramvignesh.dev`,
+    image: `content/assets/icon.png`,
     social: {
       twitter: `akshay5995`,
       medium: `akshay5995`,
@@ -158,8 +159,8 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#888b8d`,
         display: `minimal-ui`,
-        orientation: `landscape`,
-        icon: `content/assets/profile-pic.jpg`,
+        orientation: `portrait`,
+        icon: `content/assets/icon.png`,
       },
     },
     `gatsby-plugin-offline`,
