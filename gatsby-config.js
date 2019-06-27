@@ -154,7 +154,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Context Switch`,
-        short_name: `CS`,
+        short_name: `Context Switch`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#888b8d`,
