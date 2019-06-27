@@ -87,13 +87,16 @@ var rabbit = {
   jumps: true,
   __proto__: animal,
 }
+
 var bugsBunny = {
   likesEating: "Cartoon Carrots",
   isCartoon: true,
   __proto__: rabbit,
 }
+
 bugsBunny.walk() // walking!!!
 // resolved by going up the prototype chain to 'animal'
+
 console.log(bugsBunny.jumps) // true
 // resolved by going up the prototype chain to 'rabbit'
 ```
@@ -152,6 +155,7 @@ function whatIsA() {
 }
 
 console.log(whatIsA()) //Global
+
 console.log(whatIsA().call(obj1)) //Custom
 ```
 
@@ -178,6 +182,7 @@ console.log(whatIsAInObj2()); // I'm Object 2's a!
 With the introduction of arrow functions `this` retains the value of the enclosing lexical context's `this`.
 
 ```javascript
+
 var obj = {
   bar: function() {
     var x = () => this
@@ -188,6 +193,7 @@ var obj = {
 var fn = obj.bar()
 
 console.log(fn() === obj) // true
+
 ```
 
 I can keep going.But, for more on this take a look at the [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this). 😉
@@ -209,7 +215,9 @@ A definition of hoisting might suggest that variable and function declarations a
 It's not true , the variable and function declarations are put into memory during the compile phase, but stay exactly where you typed them in your code.
 
 ```javascript
+
 console.log(sayHello("world!")) // Hello world!
+
 console.log(a)
 
 // undefined and not 'ReferenceError' due to hoisting
@@ -224,12 +232,14 @@ var a = 1
 var sayOla = function(param) {
   return "Hello " + param
 }
+
 ```
 
 Above example shows hoisting in action.
 Conceptually, how your run time sees it is.
 
 ```javascript
+
 function sayHello(param) {
   return "Hello " + param
 }
@@ -246,6 +256,7 @@ a = 1
 sayOla = function(param) {
   return "Hello " + param
 }
+
 ```
 
 _Note: only declarations are hoisted but not assignments. also, class declarations are not hoisted._
@@ -261,6 +272,7 @@ A _closure_ is the function bundled together (enclosed) with references to its s
 Closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
 
 ```javascript
+
 function outerFunction() {
   var x = "Hello "
   return function(param) {
@@ -272,11 +284,13 @@ var newFunc = outerFunction()
 
 console.log(newFunc("World!")) // Hello World!
 // Even after returning the function has access to variable x
+
 ```
 
 Closures are usually used to give objects data privacy and to fix order of partial application of functions.
 
 ```javascript
+
 // partial application
 
 function makeAdder(x) {
@@ -288,6 +302,7 @@ function makeAdder(x) {
 var add5 = makeAdder(5)
 
 console.log(add5(10)) // 15
+
 ```
 
 ---

@@ -21,6 +21,7 @@ File names are provided in comments above every snippet use the same to create f
 **createContext**
 
 ```javascript
+
 /* file: SnackBarContext.jsx */
 
 // Default State of our SnackBar
@@ -28,9 +29,11 @@ const DEFAULT_STATE = {
   show: false, // boolean to control show/hide
   displayText: "", // text to be displayed in SnackBar
   timeOut: 2000, // time SnackBar should be visible
-}
+};
+
 // Create our Context
-const SnackBarContext = React.createContext(DEFAULT_STATE)
+const SnackBarContext = React.createContext(DEFAULT_STATE);
+
 ```
 
 The created context(SnackBarContext) has properties { Provider, Consumer }.When React renders a context Consumer, it will read the current context value from the closest matching Provider above it in the tree.
@@ -48,6 +51,7 @@ A React component that allows Consumers to subscribe to context changes. It acce
 Now Let's create a Provider called _SnackBarProvider_.
 
 ```javascript
+
 /* file: SnackBarContext.jsx */
 
 export class SnackBarProvider extends PureComponent {
@@ -91,6 +95,7 @@ export class SnackBarProvider extends PureComponent {
     )
   }
 }
+
 ```
 
 The _SnackBarProvider_ will be a stateful component which will return it's children (this.props.children) inside the _SnackBarContext.Provider_ to provide necessary values (State's Data and Handlers) to be passed on to _SnackBarContext.Consumer_ used by our SnackBar component some where down the component tree of it's children. (!important)
@@ -122,6 +127,7 @@ Let's see how we'll use it in our case.
 We'll have a _SnackBar_ component which will use the props from our Provider to control it's visibility (show/hide functionality).
 
 ```javascript
+
 const SnackBar = ({ show, handleClose, displayText }) => (
   <div className="snackBarHolder">
     {show && ( // controls visibility
@@ -136,6 +142,7 @@ const SnackBar = ({ show, handleClose, displayText }) => (
     )}
   </div>
 )
+
 ```
 
 _show_ will control the visibility, handleClose will be used by the button in our SnackBar to force the SnackBar to hide and displayText is the main text that will be displayed in our SnackBar.
@@ -145,6 +152,7 @@ So we know that our SnackBar component requires props show, handleClose, display
 So we'll create a _Higher Order Component_ that will take a Component as a parameter and passes the value from Provider as props to that Component. Let's call it _withSnackBarConsumer_.
 
 ```javascript
+
 /* file: SnackBarContext.jsx */
 
 export const withSnackBarConsumer = WrappedComponent => {
@@ -163,6 +171,7 @@ export const withSnackBarConsumer = WrappedComponent => {
   )
   return WrapSnackBarConsumer
 }
+
 ```
 
 Here, _withSnackBarConsumer_ will accept a WrappedComponent as a parameter and returns WrapSnackBarConsumer which wraps the WrappedComponent with SnackBarContext.Consumer by using our function as a child signature of Consumer.
@@ -175,6 +184,7 @@ We can use our withSnackBarConsumer to wrap our SnackBar like:
 */* file: SnackBar.jsx */*
 
 import { withSnackBarConsumer } from './SnackBarContext';
+
 const SnackBar = ({ show, handleClose, displayText }) => (
   <div className="snackBarHolder">
    {
@@ -192,6 +202,7 @@ const SnackBar = ({ show, handleClose, displayText }) => (
    }
   </div>
 );
+
 export default withSnackBarConsumer(SnackBar);
 
 ```
@@ -205,11 +216,14 @@ Let's create a SnackBarControl a button with handleOpen using _withSnackBarConsu
 ```javascript
 /* file: SnackBarControl.jsx */
 
-import { withSnackBarConsumer } from "./SnackBarContext"
+import { withSnackBarConsumer } from "./SnackBarContext";
+
 const SnackBarControl = ({ text, handleOpen }) => (
   <button onClick={() => handleOpen(text, buttonText)}>Show me!</button>
-)
-export default withSnackBarConsumer(SnackBarControl)
+);
+
+export default withSnackBarConsumer(SnackBarControl);
+
 ```
 
 SnackBarControl uses our handleOpen from our SnackBarProvider. We connected SnackBarControl to handleOpen using the our withSnackBarConsumer.
@@ -225,6 +239,7 @@ import { SnackBarProvider } from './SnackBarContext';
 import SnackBarControl from './SnackBarControl.jsx';
 import logo from './logo.svg';
 import './App.css';
+
 class App extends Component {
   render() {
     return (

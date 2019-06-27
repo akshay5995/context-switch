@@ -21,8 +21,10 @@ or,
 Basic usage,
 
 ```javascript
-import Report from "powerbi-report-component"
-;<Report
+
+import Report from "powerbi-report-component";
+
+<Report
   embedType="report"
   tokenType="Embed"
   accessToken=""
@@ -31,6 +33,7 @@ import Report from "powerbi-report-component"
   permissions="All"
   style={myStyleObject}
 />
+
 ```
 
 ---
@@ -90,6 +93,7 @@ Using an iframe is pretty straightforward but, this doesn't provide the flexibil
 You can use the generated URL to embed using iframe like this,
 
 ```html
+
 <iframe
   width="800"
   height="600"
@@ -97,6 +101,7 @@ You can use the generated URL to embed using iframe like this,
   allowfullscreen="true"
 >
 </iframe>
+
 ```
 
 But, naturally as JS developers we tend to go with the more flexible JS API.
@@ -114,8 +119,10 @@ Check out the [package](https://www.npmjs.com/package/powerbi-report-component).
 Usage,
 
 ```javascript
-import Report from "powerbi-report-component"
-;<Report
+
+import Report from "powerbi-report-component";
+
+<Report
   embedType="report" // or "dashboard"
   tokenType="Embed" // or "Aad"
   accessToken="" // accessToken goes here
@@ -124,6 +131,7 @@ import Report from "powerbi-report-component"
   permissions="All" // or "View"
   style={myStyleObject}
 />
+
 ```
 
 **Currently supported features:**
@@ -169,13 +177,17 @@ onSelectData={(data) =>
 Fullscreen
 
 ```javascript
+
 setFullscreen = () => this.report.fullscreen()
+
 ```
 
 Print Report
 
 ```javascript
+
 printReport = () => this.report.print()
+
 ```
 
 Change report mode, show/hide visual headers, filters(set, get, remove)
@@ -183,14 +195,17 @@ Change report mode, show/hide visual headers, filters(set, get, remove)
 Change Mode
 
 ```javascript
+
 // mode can be "view" or "edit"
 
 changeMode = mode => this.report.switchMode(mode)
+
 ```
 
 Show or Hide Visual Headers
 
 ```javascript
+
 toggleAllVisualHeaders = bool => {
   const newSettings = {
     visualSettings: {
@@ -212,6 +227,7 @@ toggleAllVisualHeaders = bool => {
       console.log(errors)
     })
 }
+
 ```
 
 Set Filters
@@ -252,6 +268,7 @@ Set Filters
 Get Filters
 
 ```javascript
+
 getFilter = () =>
   this.report
     .getFilters()
@@ -261,15 +278,18 @@ getFilter = () =>
     .catch(function(errors) {
       console.log(errors)
     })
+
 ```
 
 Remove Filters
 
 ```javascript
+
 removeFilters = () =>
   this.report.removeFilters().catch(function(errors) {
     console.log(errors)
   })
+
 ```
 
 More features coming soon! ⚡️
