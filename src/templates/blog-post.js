@@ -6,7 +6,6 @@ import Layout from "../components/layout"
 import Time from "../components/time"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
-import Pocket from "../components/pocket"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -36,7 +35,6 @@ class BlogPostTemplate extends React.Component {
             minutes={post.fields.readingTime.minutes}
             text={post.fields.readingTime.text}
           />
-          <Pocket />
         </p>
         <div
           style={{ lineHeight: "1.7" }}
