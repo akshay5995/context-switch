@@ -30,7 +30,7 @@ class MailChimpForm extends Component {
     const { email } = this.state
     if (email !== "") {
       const result = await addToMailchimp(email)
-      this.setState({ result })
+      this.setState({ result, email: "" })
     }
   }
 
@@ -81,7 +81,7 @@ class MailChimpForm extends Component {
               />
             </div>
             <div className="clear">
-              {!result && (
+              {!isError && (
                 <input
                   type="submit"
                   value="Subscribe"
