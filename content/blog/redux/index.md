@@ -4,7 +4,7 @@ date: "2019-06-30T23:46:37.121Z"
 description: My understanding and notes on redux from various sources
 ---
 
-Hi guys, It’s been a _really long_ since I wrote a blog post. I’m starting a habit of regularly blogging about the things I learn. I plan to blog both technical and non-technical stuff.
+Hi guys, It’s been a _really long_ since I wrote a blog post. I’m starting a habit of regularly blogging about the things I learn. I plan to blog about both technical and non-technical subjects.
 
 Without any further ado.
 
