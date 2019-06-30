@@ -157,7 +157,7 @@ module.exports = {
         short_name: `Context Switch`,
         start_url: `/`,
         background_color: `#fff`,
-        theme_color: `#888b8d`,
+        theme_color: `#6C6E70`,
         display: `standalone`,
         icon: `content/assets/icon.png`,
       },

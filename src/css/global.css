@@ -12,7 +12,7 @@ html > a {
 }
 
 .title > a {
-  color: #888b8d;
+  color: #6C6E70;
   display: table;
   white-space: nowrap;
   font-weight: 700;
@@ -23,7 +23,7 @@ html > a {
 
 .title > a:before,
 .title > a:after {
-  border-top: 1px solid #888b8d;
+  border-top: 1px solid #6C6E70;
   content: "";
   display: table-cell;
   position: relative;
@@ -65,7 +65,7 @@ html > a {
 
 footer:before,
 footer:after {
-  border-top: 1px solid #888b8d;
+  border-top: 1px solid #6C6E70;
   content: "";
   display: table-cell;
   position: relative;
@@ -80,7 +80,7 @@ footer:after {
 }
 
 .text-link {
-  color: #888b8d;
+  color: #6C6E70;
   text-decoration: none;
   font-style: italic;
   font-weight: 700;
@@ -157,7 +157,7 @@ footer:after {
 }
 
 #mc_embed_signup_scroll > input[type="email"]:placeholder {
-  color: hsla(0, 0%, 100%, 0.5);
+  color: #6C6E70;
 }
 
 #mc_embed_signup_scroll > div {
