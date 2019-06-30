@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import Time from "../components/time"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import Pocket from "../components/pocket"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -23,16 +24,19 @@ class BlogPostTemplate extends React.Component {
         <p
           style={{
             ...scale(-1 / 5),
-            display: `block`,
+            display: `flex`,
             marginBottom: rhythm(1),
             marginTop: rhythm(-1),
           }}
         >
-          {post.frontmatter.date},{"  "}
+          <span class="date">
+            {post.frontmatter.date},{"  "}
+          </span>
           <Time
             minutes={post.fields.readingTime.minutes}
             text={post.fields.readingTime.text}
           />
+          <Pocket />
         </p>
         <div
           style={{ lineHeight: "1.7" }}

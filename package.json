@@ -11,7 +11,7 @@
     "babel-plugin-styled-components": "^1.10.0",
     "clippyjs": "^0.0.3",
     "gatsby": "^2.7.1",
-    "gatsby-cli": "^2.6.4",
+    "gatsby-cli": "^2.7.7",
     "gatsby-image": "^2.1.0",
     "gatsby-plugin-feed": "^2.3.1",
     "gatsby-plugin-google-analytics": "^2.0.20",

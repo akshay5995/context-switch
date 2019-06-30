@@ -28,8 +28,10 @@ class MailChimpForm extends Component {
   _handleSubmit = async e => {
     e.preventDefault()
     const { email } = this.state
-    const result = await addToMailchimp(email)
-    this.setState({ result })
+    if (email !== "") {
+      const result = await addToMailchimp(email)
+      this.setState({ result })
+    }
   }
 
   render() {

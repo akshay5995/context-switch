@@ -87,6 +87,10 @@ footer:after {
   text-transform: capitalize;
 }
 
+.time {
+  flex-grow: 1;
+}
+
 .time > span {
   font-size: 0.83255rem;
   line-height: 1.75rem;
@@ -182,4 +186,8 @@ footer:after {
 .success-text {
   padding: 4px 0;
   color: lightgreen;
+}
+
+.date {
+  margin-right: 8px;
 }
