@@ -159,7 +159,7 @@ If you're building a small application I suggest you use React's component state
 
 Okay, You don't have to take my word for it. Instead, [believe Dan's]('https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367). 
 
-There are _tradeoffs_ in any solution you pick so choose wisely by carefully analysing your use case and list available solutions. I always recommend starting with the minimal and moving to something advance when you hit a roadblock.
+There are _tradeoffs_ in any solution you pick so choose wisely by carefully analysing your use case and the list of available solutions. I always recommend starting with something minimal and moving to something advanced when you hit a roadblock.
 
 If you're interested in how redux works under the hood. I highly recommend you try implementing Redux from [scratch](https://www.jamasoftware.com/blog/lets-write-redux/).
 
