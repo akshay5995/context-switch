@@ -121,6 +121,7 @@ footer:after {
   clear: left;
   font: 14px Helvetica, Arial, sans-serif;
   width: 100%;
+  min-height: 258px;
 }
 
 #mc_embed_signup > form > div {
