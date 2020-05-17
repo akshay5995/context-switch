@@ -12,7 +12,7 @@ TLDR; if you just want to use `useReport`, here's how it works.
 import React, { useEffect, useRef } from "react"
 import { useReport } from "powerbi-report-component"
 
-// Some powerbi setting disable your nav and filters from embed
+// Some powerbi settings to disable your nav and filters from embed
 const settings = {
   filterPaneEnabled: false,
   navContentPaneEnabled: false,
@@ -20,7 +20,7 @@ const settings = {
 
 const MyReport = () => {
   const reportRef = useRef(null)
-  // useReport returns `report` the embed instance and setEmbed a function to
+  // useReport returns `report` the embed instance and `setEmbed` a function to
   // set your embed into the div
   const [report, setEmbed] = useReport()
 
@@ -33,7 +33,7 @@ const MyReport = () => {
     settings,
   }
 
-  // !important
+  // important
   useEffect(() => {
     // call inside useEffect so the we have the reportRef (reference available)
     // pass in the ref for the div and your config
