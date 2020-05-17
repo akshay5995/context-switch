@@ -281,7 +281,7 @@ The hook exposes an internal function as an API for end user to get the most out
 
 This was the rationale behind the `useReport` hook and my thoughts on good API design for libraries.
 
-If you're interested seeing more of the code you can head here: https://github.com/akshay5995/powerbi-report-component/
+If you're interested seeing more of the code you can head to https://github.com/akshay5995/powerbi-report-component/
 
 PRs or issues welcome for the library.
 
