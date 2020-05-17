@@ -281,7 +281,9 @@ The hook exposes an internal function as an API for end user to get the most out
 
 This was the rationale behind the `useReport` hook and my thoughts on good API design for libraries.
 
-If you're interested seeing more of the code you can head to https://github.com/akshay5995/powerbi-report-component/
+Next step in the quest to improve the API design for the library would be add typings and support types. i.e, to add support for Typescript (In progress). In the next post I'll cover some basics of Typescript and more on migrating the library to Typescript.
+
+Meanwhile, If you're interested seeing more of the code or contributing you can head to https://github.com/akshay5995/powerbi-report-component/
 
 PRs or issues welcome for the library.
 
