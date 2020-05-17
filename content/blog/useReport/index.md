@@ -277,7 +277,7 @@ function useReport() {
 
 See the full code [here](https://github.com/akshay5995/powerbi-report-component/blob/master/src/lib/hooks/useReport.js)
 
-By exporting `useReport` from the library the user has more than one way to use the library. This adds to the value of the library as it complements the users development environment by the use React hooks.
+By exporting `useReport` from the library the user has more than one way to use the library. This adds to the value of the library as it complements the users development environment by the use of React hooks.
 
 The hook exposes an internal function as an API for end user to get the most out of the library and by using the hook user can choose to reduce the extra abstraction and logic that comes along with using the API with an component.
 
