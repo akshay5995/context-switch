@@ -64,7 +64,7 @@ Let's first see what an API is. API is an acronym for Application Programming In
 
 How does it apply to libraries?
 
-Functions or components exposed by your library are also APIs.As it allows the developer to communicate between their application code and your code that exists in the library.
+Functions or components exposed by your library are also APIs as, it allows the developer to communicate between their application code and your code that exists in the library.
 
 When I first created the component it allowed you to embed a report in your React application. So it exported React component as a default called `Report`.
 
