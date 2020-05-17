@@ -20,7 +20,7 @@ const settings = {
 
 const MyReport = () => {
   const reportRef = useRef(null)
-  // userReport returns `report` the embed instance and setEmbed a function to
+  // useReport returns `report` the embed instance and setEmbed a function to
   // set your embed into the div
   const [report, setEmbed] = useReport()
 
